@@ -1,0 +1,23 @@
+graph blocking_after {
+  layout=neato;
+  bgcolor="transparent";
+  label="Blocking 後（同姓名、同出生日期）：4 組候選 pair";
+  labelloc="b";
+  fontname="Heiti TC";
+  fontsize=16;
+  fontcolor="#555555";
+
+  node [shape=circle, style=filled, fillcolor="#eaf2fb", color="#4a90d9",
+        fontname="Heiti TC", fontsize=11, width=0.6, fixedsize=true];
+  edge [color="#d9704a", penwidth=2.2];
+
+  A [label="王大明\n分校A", pos="100,0!"];
+  B [label="王大明\n分校B", pos="50,86.6!"];
+  C [label="王大明\n分校C", pos="-50,86.6!"];
+  D [label="王小華\n分校D", pos="-100,0!"];
+  E [label="王小華\n分校E", pos="-50,-86.6!"];
+  F [label="李小美\n分校F", pos="50,-86.6!", fillcolor="#f5f5f5", color="#bbbbbb"];
+
+  A--B; A--C; B--C;
+  D--E;
+}

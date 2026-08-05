@@ -1,0 +1,37 @@
+digraph splink_pipeline {
+  rankdir=LR;
+  bgcolor="transparent";
+  fontname="Heiti TC";
+  nodesep=0.6;
+  ranksep=0.7;
+
+  node [shape=box, style="rounded,filled", fontname="Heiti TC", fontsize=16,
+        fillcolor="#eaf2fb", color="#4a90d9", penwidth=1.5, margin="0.25,0.15"];
+  edge [color="#4a90d9", penwidth=1.5, arrowsize=0.8];
+
+  Blocking   [label="1. Blocking\n先決定哪些 pair 值得比對"];
+  Estimate   [label="2. 參數估計 (m/u)\nEM 演算法從資料估出 m/u"];
+  Pairwise   [label="3. Pairwise 機率\n算出每個 pair 的\nmatch probability"];
+  Clustering [label="4. Clustering\nconnected components\n收斂成群組", fillcolor="#fdecea", color="#d9704a"];
+
+  Blocking -> Estimate -> Pairwise -> Clustering;
+
+  subgraph cluster_stat {
+    label="統計推論";
+    fontname="Heiti TC";
+    fontsize=14;
+    fontcolor="#555555";
+    style="dashed,rounded";
+    color="#999999";
+    Blocking; Estimate; Pairwise;
+  }
+  subgraph cluster_graph {
+    label="圖論演算法";
+    fontname="Heiti TC";
+    fontsize=14;
+    fontcolor="#555555";
+    style="dashed,rounded";
+    color="#999999";
+    Clustering;
+  }
+}

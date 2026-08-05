@@ -1,0 +1,26 @@
+graph blocking_before {
+  layout=neato;
+  bgcolor="transparent";
+  label="全比對：15 組候選 pair";
+  labelloc="b";
+  fontname="Heiti TC";
+  fontsize=16;
+  fontcolor="#555555";
+
+  node [shape=circle, style=filled, fillcolor="#eaf2fb", color="#4a90d9",
+        fontname="Heiti TC", fontsize=11, width=0.6, fixedsize=true];
+  edge [color="#bcd4ee", penwidth=1.2];
+
+  A [label="王大明\n分校A", pos="100,0!"];
+  B [label="王大明\n分校B", pos="50,86.6!"];
+  C [label="王大明\n分校C", pos="-50,86.6!"];
+  D [label="王小華\n分校D", pos="-100,0!"];
+  E [label="王小華\n分校E", pos="-50,-86.6!"];
+  F [label="李小美\n分校F", pos="50,-86.6!"];
+
+  A--B; A--C; A--D; A--E; A--F;
+  B--C; B--D; B--E; B--F;
+  C--D; C--E; C--F;
+  D--E; D--F;
+  E--F;
+}

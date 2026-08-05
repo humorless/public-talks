@@ -1,0 +1,27 @@
+graph clustering_example {
+  layout=neato;
+  overlap=false;
+  bgcolor="transparent";
+  fontname="Heiti TC";
+
+  node [shape=box, style="rounded,filled", fillcolor="#eaf2fb", color="#4a90d9",
+        fontname="Heiti TC", fontsize=12, margin="0.2,0.12"];
+  edge [fontname="Heiti TC", fontsize=11];
+
+  Same [label="最終群組：同一人（王大明）", shape=plaintext, style=none, fontcolor="#2e7d32",
+        fontsize=13, pos="160,290!"];
+  A [label="分校A 記錄", pos="0,0!"];
+  B [label="分校B 記錄", pos="160,170!"];
+  C [label="分校C 記錄", pos="320,0!"];
+
+  Diff [label="不同群組（不合併）", shape=plaintext, style=none, fontcolor="#b23c3c",
+        fontsize=13, pos="670,90!"];
+  D [label="分校D 記錄\n王小華", fillcolor="#fdecea", color="#d9704a", pos="560,0!"];
+  E [label="分校E 記錄\n王小華", fillcolor="#fdecea", color="#d9704a", pos="780,0!"];
+
+  A -- B [label="match prob 0.92", color="#4a90d9", penwidth=2];
+  B -- C [label="match prob 0.88", color="#4a90d9", penwidth=2];
+  A -- C [label="match prob 0.31\n（單看這組不像，\n沒有直接證據）", style=dashed, color="#999999"];
+
+  D -- E [label="match prob 0.08\n（同名同生日，但其他證據不符）\n低於門檻，不合併", style=dashed, color="#999999"];
+}
