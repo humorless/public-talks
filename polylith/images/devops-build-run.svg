@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="320" viewBox="0 0 920 320" font-family="Helvetica, Arial, sans-serif">
+  <!-- Left panel: traditional -->
+  <text x="205" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a1a2e">傳統模式</text>
+
+  <rect x="40" y="60" width="150" height="80" rx="10" fill="#ffffff" stroke="#4a90d9" stroke-width="3"/>
+  <text x="115" y="95" text-anchor="middle" font-size="17" fill="#1a1a2e">Dev</text>
+  <text x="115" y="118" text-anchor="middle" font-size="13" fill="#666">寫程式</text>
+
+  <rect x="270" y="60" width="150" height="80" rx="10" fill="#ffffff" stroke="#999" stroke-width="3"/>
+  <text x="345" y="95" text-anchor="middle" font-size="17" fill="#1a1a2e">Ops</text>
+  <text x="345" y="118" text-anchor="middle" font-size="13" fill="#666">上線／維運</text>
+
+  <line x1="190" y1="100" x2="266" y2="100" stroke="#c0392b" stroke-width="3" marker-end="url(#arrow-red)"/>
+  <text x="228" y="85" text-anchor="middle" font-size="12" fill="#c0392b">丟過牆</text>
+
+  <text x="230" y="175" text-anchor="middle" font-size="14" fill="#444">開發與維運分屬不同團隊、不同責任</text>
+
+  <!-- divider -->
+  <line x1="460" y1="20" x2="460" y2="300" stroke="#ddd" stroke-width="2"/>
+
+  <!-- Right panel: devops -->
+  <text x="700" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a1a2e">DevOps：You Build It, You Run It</text>
+
+  <rect x="600" y="70" width="200" height="90" rx="10" fill="#ffffff" stroke="#4a90d9" stroke-width="3"/>
+  <text x="700" y="105" text-anchor="middle" font-size="17" fill="#1a1a2e">同一組人</text>
+  <text x="700" y="130" text-anchor="middle" font-size="13" fill="#666">Dev = Ops</text>
+
+  <!-- loop arrow: run feeds back into build -->
+  <path d="M 780 162 C 780 230, 620 230, 620 162" fill="none" stroke="#4a90d9" stroke-width="3" marker-end="url(#arrow-blue)"/>
+
+  <text x="760" y="200" text-anchor="middle" font-size="13" fill="#4a90d9">run</text>
+  <text x="640" y="200" text-anchor="middle" font-size="13" fill="#4a90d9">build</text>
+
+  <text x="700" y="280" text-anchor="middle" font-size="14" fill="#444">寫程式的人，也負責上線與維運</text>
+
+  <defs>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#c0392b"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4a90d9"/>
+    </marker>
+  </defs>
+</svg>
