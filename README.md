@@ -1,4 +1,9 @@
-# slides
+# Public Talks 
+
+## 有記錄的場次
+
+- 2026 TDAMA - [Entity Resolution](./splink) 
+- 2026 Coscup - [Polylith](./polylith)
 
 ## 產生 PDF
 
