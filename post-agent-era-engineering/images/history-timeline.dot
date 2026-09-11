@@ -1,0 +1,13 @@
+digraph timeline {
+  rankdir=LR;
+  bgcolor="transparent";
+  node [shape=box, style="rounded,filled", fillcolor="#eef4fc", color="#4a90d9", fontsize=14];
+  edge [color="#4a90d9", fontsize=11];
+
+  a [label="組語時代\n(硬體優先)"];
+  b [label="C/C++ 語言時代\n(效能優先)"];
+  c [label="Garbage Collection 時代\n(Developer 優先)"];
+  d [label="Coding Agent 時代\n(Agent 優先)", fillcolor="#4a90d9", fontcolor="white"];
+
+  a -> b -> c -> d;
+}

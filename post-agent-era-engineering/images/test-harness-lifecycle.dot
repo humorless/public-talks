@@ -1,0 +1,26 @@
+digraph harness {
+  rankdir=LR;
+  bgcolor="transparent";
+  node [shape=box, style="rounded,filled", fillcolor="#eef4fc", color="#4a90d9", fontsize=14];
+  edge [color="#4a90d9", fontsize=11];
+
+  boot [label="啟動真實系統\n(in-memory DB／隨機 port)"];
+  teardown [label="Teardown\n(容器銷毀)"];
+
+  subgraph cluster_amortize {
+    label="開機成本攤提範圍\n(file 或 test suite)";
+    style=dashed;
+    color="#888888";
+    fontsize=12;
+    fontcolor="#555555";
+
+    t1 [label="測試 1"];
+    t2 [label="測試 2"];
+    t3 [label="測試 N"];
+    t1 -> t2 [label="輕量重置"];
+    t2 -> t3 [label="輕量重置"];
+  }
+
+  boot -> t1;
+  t3 -> teardown;
+}

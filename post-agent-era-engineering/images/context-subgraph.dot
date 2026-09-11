@@ -1,0 +1,40 @@
+graph codebase {
+  layout=neato;
+  bgcolor="transparent";
+  overlap=false;
+  splines=true;
+  node [shape=circle, style=filled, fixedsize=true, width=0.7, fontsize=10];
+
+  // 與任務無關的檔案／節點（背景 codebase）
+  node [fillcolor="#e6e6e6", color="#bbbbbb", fontcolor="#999999"];
+  A [label="Util", pos="5.3,0.3!"];
+  B [label="Config", pos="9.3,2.3!"];
+  C [label="Model", pos="7.6,3.1!"];
+  D [label="Route", pos="4.5,3.4!"];
+  E [label="Service", pos="4.6,2.1!"];
+  F [label="Migration", pos="4.3,1.1!"];
+  G [label="Test", pos="7.0,1.4!"];
+  H [label="Style", pos="7.8,0.2!"];
+
+  edge [color="#dddddd"];
+  A -- B; B -- C; C -- D; D -- E; E -- F; F -- G; G -- H; H -- A;
+  A -- E; C -- G;
+
+  // 任務相關子圖（task-relevant subgraph）
+  node [fillcolor="#4a90d9", color="#1a1a2e", fontcolor="white"];
+  X1 [label="Component", pos="2.2,0.5!"];
+  X2 [label="Hook", pos="2.3,1.9!"];
+  X3 [label="API\nClient", pos="2.2,3.3!"];
+  X4 [label="Type", pos="0.4,1.9!"];
+
+  edge [color="#1a1a2e", penwidth=2.2];
+  X1 -- X2;
+  X2 -- X3;
+  X3 -- X4;
+  X4 -- X1;
+
+  edge [color="#9fc3e8", penwidth=1, style=dashed];
+  A -- X1;
+  D -- X3;
+  F -- X2;
+}

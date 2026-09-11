@@ -1,0 +1,14 @@
+digraph hook {
+  rankdir=LR;
+  bgcolor="transparent";
+  node [shape=box, style="rounded,filled", fillcolor="#eef4fc", color="#4a90d9", fontsize=14];
+  edge [color="#4a90d9", fontsize=11];
+
+  edit [label="Agent 編輯程式碼"];
+  hook [label="Hook 自動觸發", shape=diamond, style="filled", fillcolor="#fff3cd", color="#d9a017"];
+  diag [label="get_diagnostics\n(取得錯誤／警告)"];
+  fix [label="Agent 主動修正", fillcolor="#4a90d9", fontcolor="white"];
+
+  edit -> hook -> diag -> fix;
+  fix -> edit [label="  下一次編輯", style=dashed, constraint=false];
+}
