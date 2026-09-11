@@ -2,6 +2,7 @@
 
 ## 有記錄的場次
 
+- 2026 JCConf - [Post Agent Era Engineering](./post-agent-era-engineering)
 - 2026 TDAMA - [Entity Resolution](./splink) 
 - 2026 Coscup - [Polylith](./polylith)
 
