@@ -1,0 +1,42 @@
+digraph arch_review {
+  rankdir=LR;
+  bgcolor="white";
+  fontname="Helvetica";
+  nodesep=0.35;
+  ranksep=0.6;
+  node [shape=box, style="rounded,filled", fillcolor="#eef3fb", color="#4a90d9", fontname="Helvetica", fontsize=15, margin="0.18,0.12"];
+  edge [color="#4a90d9", fontname="Helvetica", fontsize=12];
+
+  context [label="Context\nKM 背景\n(800人鋼鐵業/\nHayStack 選型)", shape=note, fillcolor="#fff8e1", color="#c9a227"];
+
+  subgraph cluster_epistemic {
+    label="知識分級 (Epistemological Boundaries)：Observed / Inferred / Assumed / Recommended — 貫穿全部任務";
+    style="dashed";
+    color="#5cb85c";
+    fontcolor="#3d8b3d";
+    fontsize=13;
+    labeljust="l";
+    labelloc="b";
+    margin=18;
+
+    t1 [label="Task 1\n獨立思考\nKM purpose\n(zero-base，\n不看 spec)"];
+    t2 [label="Task 2\nReview KM 現況\n(讀 2 個 repo\n程式碼)"];
+    t3 [label="Task 3\nReview\nlevinrag-SPEC.md"];
+    t4 [label="Task 4\nSimple 分析\n(Rich Hickey\ndefinition)"];
+    t5 [label="Task 5\n列舉 3–5 個\n難處理／易失敗\nuse cases"];
+    t6 [label="Task 6\n評估 architecture\nevolution paths"];
+  }
+
+  context -> t1;
+  context -> t2;
+  context -> t3;
+
+  t1 -> t3 [label="階段隔離：先獨立判斷，避免被參考設計錨定", style=dashed, color="#d9534f", fontcolor="#d9534f", constraint=false];
+
+  t1 -> t4;
+  t2 -> t4;
+  t3 -> t4;
+  t4 -> t5;
+  t5 -> t6;
+  t4 -> t6;
+}
